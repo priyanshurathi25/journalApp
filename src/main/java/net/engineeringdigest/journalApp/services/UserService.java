@@ -4,18 +4,17 @@ import lombok.extern.slf4j.Slf4j;
 import net.engineeringdigest.journalApp.Entity.User;
 import net.engineeringdigest.journalApp.Repository.UserRepository;
 import org.bson.types.ObjectId;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
 @Slf4j
 public class UserService {
     @Autowired
@@ -28,7 +27,7 @@ public class UserService {
             user.setRoles(Arrays.asList("USER"));
             userRepository.save(user);
         }catch (Exception e){
-          //  log.error("Error occurred for {} :",user.getUserName(),e);
+            log.error("Error occurred for {} :",user.getUserName(),e);
             log.error("haha");
             log.info("haha");
             log.warn("haha");
