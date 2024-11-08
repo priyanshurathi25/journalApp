@@ -1,6 +1,7 @@
 package net.engineeringdigest.journalApp.Entity;
 
 import lombok.*;
+import net.engineeringdigest.journalApp.Enum.Sentiment;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -22,7 +23,6 @@ public class User {
   @NonNull
   private String userName;
   private String Email;
-  private String SantimentsAnalysis;
   @NonNull
   private String password;
   @DBRef
